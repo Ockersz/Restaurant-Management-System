@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e01c8c19-9013-4583-9044-05d9c9e4880a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[Select * from orders]]>
+	</queryString>
+	<field name="OrderNo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tprice" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DOB" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EmpID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="Tprice_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{Tprice}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="125" y="0" width="322" height="79" uuid="17a7604f-7881-4b31-b8f4-57900881c662"/>
+				<textElement>
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Monthly Sales Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="3" width="66" height="27" uuid="0b0dd072-e101-49c5-ade2-3da26fdc0985"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[OrderNo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="3" width="80" height="27" uuid="5ccc18ec-333a-4617-905a-99320171f9c7"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Tprice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="3" width="104" height="27" uuid="0293474b-cfe4-4662-be3b-fc54aaf18ad3"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[DOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="3" width="104" height="27" uuid="e487f990-04e8-4bd8-a0b9-5b72e39162a6"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[EmpID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="22" y="21" width="66" height="27" uuid="0d19090c-4b47-43e7-ba95-20adb71733ef"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OrderNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="21" width="80" height="27" uuid="ba9a9216-cb8f-4bc5-a56b-f6a6eb7873b0"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="21" width="104" height="27" uuid="f380a379-160c-4d8e-87f6-f151a5d9b084"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DOB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="21" width="104" height="27" uuid="6a515b3a-4e56-4531-bd92-1858dfae57a8"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EmpID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="447" y="14" width="100" height="31" uuid="410e9f75-06e0-4457-ada0-63456ec31ae0"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Tprice_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="365" y="14" width="67" height="31" uuid="ef47d1bd-ff6b-4c8e-9c28-aaca904a2a0e"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
